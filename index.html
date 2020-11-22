@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+
+    <body>
+        <script>
+            // ---------- JavaScript ----------
+            console.log('Hello World!');
+
+            // ---------- VARIÁVEIS PRIMITIVAS ----------
+            var nome = "Daniel"; // string - cadeia de caracteres
+            var idade = 24; // int
+            var peso = 60.2; // float
+            var humano = true; // boolean
+
+            // vetor - array
+            var alunos = ['Daniel', 'Fulano', 'Beltrano'];
+
+            // objeto
+            var aluno = {
+                nome: alunos[0],
+                idade: 24,
+                peso: 60.2,
+                humano: true
+            };
+
+            // Exibindo o vetor
+            console.log(alunos[0]);
+            // Exibindo o objeto
+            console.log(aluno.nome);
+
+            // ---------- OPERAÇÕES MATEMÁTICAS ----------
+            var x = 10
+            var y = 5
+
+            // SOMA + // SUBTRAÇÃO - // MULTIPLICAÇÃO * // DIVISÃO / // RESTO DA DIVISÃO %
+            var resultado = x + y;
+            console.log(resultado);
+
+            // Incrementar o valor de uma variável. As duas formas dão o mesmo resultado.
+            x += 3;
+            console.log(x);
+            y = y + 3
+            console.log(y);
+
+            // FUNÇÃO. Dentro dos parênteses ficam os parâmetros da função. E no final eu coloco um retorno.
+            // Não é necessário dizer o tipo dos parâmetros e nem o tipo do retorno, ex: int, float, etc.
+            function soma(n1, n2) {
+                var result = n1 + n2;
+                return result;
+            };
+
+            // Executando a função, porém não será exibida.
+            soma(1, 2);
+
+            // Exibindo o resultado da função.
+            // A variável result, logo abaixo, é como se fosse uma nova variável. Porquê? Toda variável "var", só é visível 
+            // dentro do escopo na qual ela foi definida, ou seja, a primeira "var result" só está visível dentro da função soma.
+            // Podemos fazer um exemplo alterando os nomes para resultDentro e resultFora, o resultado será o mesmo.
+            var result = soma(1, 2);
+            console.log(result);
+
+            // ---------- CONDICIONAIS ----------
+            // var nome = Daniel; // 1 "=" significa que a variável está recebendo um valor, nesse caso, recebeu uma string.
+            // 1 == '1'; // 2 "==" significa que estou comparando dois valores, nesse caso retornará TRUE, porque são valores iguais.
+            // 1 === '1' // 3 "===" significa que irá comparar o valor e o tipo das variáveis. Nesse caso retornará FALSE, porque apesar dos valores serem iguais, os tipos são diferentes.
+
+            // IF e ELSE
+            function retornaSexo1(sexo) {
+                
+                if (sexo === 'M') {
+                    return 'Masculino';
+                } else if (sexo === 'F') {
+                    return 'Feminino';
+                } else {
+                    return 'Outro';
+                }
+            }
+            var resultado = retornaSexo1('M');
+            console.log(resultado);
+
+            // SWITCH-CASE
+            function retornaSexo2(sexo) {
+                switch (sexo) {
+                    case 'M':
+                        return 'Masculino';
+                    case 'F':
+                        return 'Feminino';
+                    default:
+                        return 'Outro';
+                }
+            }
+            var resultado = retornaSexo2('F');
+            console.log(resultado);
+
+            // ---------- OPERADORES LÓGICOS (AND, OR, NOT) ----------
+            // AND
+            var sexo = 'M', idade = 24;
+            if (sexo === 'M' && idade >= 18) {
+                console.log('Ok!');
+            }
+            // OR
+            if (sexo === 'F' || idade >= 18) {
+                console.log('Ok!');
+            }
+            // NOT
+            if (sexo !== 'F') {
+                console.log('Ok!');
+            }
+
+            // É possível testar e armazenar o valor da condição numa variável de duas formas.
+            // 1ª forma
+            var masculino;
+            if (sexo === 'M') {
+                masculino = true;
+            } else {
+                masculino = false;
+            }
+            console.log(masculino);
+
+            // 2ª forma
+            // Nesse caso, como só tem uma condição, não é necessário usar os parênteses
+            var masculino = sexo === 'F';
+            console.log(masculino);
+
+            // ---------- CONDIÇÃO TERNÁRIA ----------
+            // Pode ser utilizada quando temos um if e um else, ou seja, quando só temos duas verificações, se ou senão.
+            // Ela pode ser reduzida da seguinte forma: 
+            var sexo = 'F';
+            var retorno = (sexo === 'F') ? 'Feminino' : 'Masculino';
+            console.log(retorno);
+
+            // ---------- ESTRUTURAS DE REPETIÇÃO (FOR - WHILE) ----------
+            // Quando usar o for? R: Quando souber o tamanho do intervalo ou o valor final.
+            for (var i = 0; i <= 10; i++) {
+                console.log("i = " + i);
+            }
+
+            // Quando usar o while? R: Quando não souber quantas vezes o fluxo será executado.
+            var j = 0;
+            while (j <= 10) {
+                console.log("j = " + j);
+                j++;
+            }
+
+            // ---------- INTERVALO E TIMEOUT ----------
+            
+
+
+        </script>
+    </body>
+</html>
